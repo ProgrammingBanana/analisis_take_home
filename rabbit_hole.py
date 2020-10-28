@@ -15,25 +15,25 @@ class RabbitHole():
             print("")
     print(']')
 
-    def compare(self, x, y):
-        if x == "*" and y == "*":
-            return "*"
-        return y if x == "*" else x
-        
-    def rabbit_path_helper(self, row, col):
-        if row < 0 or col < 0 or self.board[row][col] == 'o':
-            return "*"
-        elif row == 0 and col == 0:
-            return "(0,0)"
-        else:
-            return self.compare(self.rabbit_path_helper(row-1, col),self.rabbit_path_helper(row, col-1)) + " -> (" +str(row) +"," +str(col) +")"
+  def compare(self, x, y):
+    if x == "*" and y == "*":
+        return "*"
+    return y if x == "*" else x
+    
+  def rabbit_path_helper(self, row, col):
+    if row < 0 or col < 0 or self.board[row][col] == 'o':
+        return "*"
+    elif row == 0 and col == 0:
+        return "(0,0)"
+    else:
+        return self.compare(self.rabbit_path_helper(row-1, col),self.rabbit_path_helper(row, col-1)) + " -> (" +str(row) +"," +str(col) +")"
 
-    def rabbit_path(self):
-        path = self.rabbit_path_helper(self.row-1, self.col-1)
-        return path if "*" not in path else "There is no path" 
+  def rabbit_path(self):
+    path = self.rabbit_path_helper(self.row-1, self.col-1)
+    return path if "*" not in path else "There is no path" 
 
-    def print_size(self):
-        return self.row, self.col
+  def print_size(self):
+    return self.row, self.col
 
 
 if __name__ == "__main__" :
