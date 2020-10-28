@@ -1,19 +1,19 @@
 class RabbitHole():
-    def __init__(self, board):
-        self.board = board
-        self.row = len(board)
-        self.col = len(board[0])
-    
-    def print_burrow(self):
-        print('[', end="")
-        for i in range(len(self.board)):
-            for j in range(len(self.board[i])):
-                if(j == 0 and i != 0):
-                    print(" ", end = "")
-                print(self.board[i][j], end=" ")
-            if i != len(self.board)-1:
-                print("")
-        print(']')
+  def __init__(self, board):
+    self.board = board
+    self.row = len(board)
+    self.col = len(board[0])
+
+  def print_burrow(self):
+    print('[', end="")
+    for i in range(len(self.board)):
+        for j in range(len(self.board[i])):
+            if(j == 0 and i != 0):
+                print(" ", end = "")
+            print(self.board[i][j], end=" ")
+        if i != len(self.board)-1:
+            print("")
+    print(']')
 
     def compare(self, x, y):
         if x == "*" and y == "*":
