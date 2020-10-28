@@ -19,8 +19,6 @@ class GreedyLoading():
 
     def greedy_load(self, cart):
         cart_weight = 0
-        cart_weight_dict = {}
-        cart_weight_dict.update({cart: []})
         index = 0
         while index < len(self.weights):
             if cart_weight + self.weights[index] == cart:
@@ -34,8 +32,6 @@ class GreedyLoading():
                 self.weights.pop(index)
                 index -= 1
             index += 1
-
-        return cart_weight_dict
             
 
     def load(self):
