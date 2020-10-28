@@ -32,8 +32,6 @@ class RabbitHole():
     path = self.rabbit_path_helper(self.row-1, self.col-1)
     return path if "*" not in path else "There is no path" 
 
-  def print_size(self):
-    return self.row, self.col
 
 
 if __name__ == "__main__" :
